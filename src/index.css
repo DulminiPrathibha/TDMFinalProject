@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* Font loaded via <link> in index.html */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #f6f3ea;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force Fredoka on every element */
+*, *::before, *::after {
+  font-family: 'Fredoka', sans-serif !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f3ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #5DBB63;
+  border-radius: 4px;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes portalGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(93, 187, 99, 0.3), 0 0 40px rgba(93, 187, 99, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(93, 187, 99, 0.6), 0 0 80px rgba(93, 187, 99, 0.2); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes particleDrift {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-120px) translateX(30px) scale(0); opacity: 0; }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(93, 187, 99, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(93, 187, 99, 0); }
+}
+
+.animate-float { animation: floatSlow 4s ease-in-out infinite; }
+.animate-float-delayed { animation: floatSlow 4s ease-in-out infinite 1s; }
+.animate-portal-glow { animation: portalGlow 3s ease-in-out infinite; }
+.animate-fade-down { animation: fadeDown 0.7s ease forwards; }
+.animate-fade-up { animation: fadeUp 0.7s ease forwards; }
+.animate-scale-in { animation: scaleIn 0.8s ease forwards; }
+.animate-slide-right { animation: slideRight 0.8s ease forwards; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+.anim-delay-100 { animation-delay: 0.1s; }
+.anim-delay-200 { animation-delay: 0.2s; }
+.anim-delay-300 { animation-delay: 0.3s; }
+.anim-delay-400 { animation-delay: 0.4s; }
+.anim-delay-500 { animation-delay: 0.5s; }
+.anim-delay-600 { animation-delay: 0.6s; }
+.anim-delay-700 { animation-delay: 0.7s; }
+.anim-delay-800 { animation-delay: 0.8s; }
+
+.opacity-0 { opacity: 0; }

@@ -1,0 +1,68 @@
+@"
+# dependencies
+node_modules
+node_modules/
+**/node_modules
+
+# production build
+dist
+build
+.next
+out
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# JetBrains
+.idea
+
+# temporary files
+*.tmp
+*.temp
+
+# cache
+.cache
+.parcel-cache
+.eslintcache
+
+# vite
+.vite
+vite.config.js.timestamp-*
+
+# large video files (audio .mp3 intentionally NOT ignored)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.flv
+*.webm
+
+# generated files
+coverage
+
+# typescript
+*.tsbuildinfo
+"@ | Out-File -FilePath ".gitignore" -Encoding utf8

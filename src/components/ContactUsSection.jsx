@@ -166,7 +166,7 @@ export default function ContactUsSection() {
         opacity: visible?1:0, transform: visible?'translateY(0)':'translateY(22px)',
         transition: 'opacity 0.7s ease, transform 0.7s ease',
       }}>
-        <SectionTopic number="09" title="Contact Us" />
+        <SectionTopic number="10" title="Contact Us" />
 
         <p style={{
           fontFamily:"'Fredoka', sans-serif", fontWeight:500,

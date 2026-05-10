@@ -8,6 +8,8 @@ import HowItWorksSection from './components/HowItWorksSection'
 import ResearchSection from './components/ResearchSection'
 import CommercializationSection from './components/CommercializationSection'
 import TeamSection from './components/TeamSection'
+import DemoSection from './components/DemoSection'
+import ResourcesSection from './components/ResourcesSection'
 import ContactUsSection from './components/ContactUsSection'
 import bgAudio from './assets/Audio.mp3'
 
@@ -77,6 +79,8 @@ export default function App() {
       <ResearchSection />
       <CommercializationSection />
       <TeamSection />
+      <DemoSection />
+      <ResourcesSection />
       <ContactUsSection />
 
       {/* ── Footer ── */}

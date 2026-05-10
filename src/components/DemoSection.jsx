@@ -1,33 +1,28 @@
-import { useEffect, useRef, useState } from 'react'
-import demoVideo from '../assets/DemoVideo.mp4'
+import { useState, useEffect, useRef } from 'react'
 import SectionTopic from './SectionTopic'
 
-/* ─── MAIN COMPONENT ─────────────────────────────────────────── */
 export default function DemoSection() {
   const [visible, setVisible] = useState(false)
-  const sectionRef = useRef(null)
+  const ref = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.08 }
+      { threshold: 0.06 }
     )
-    if (sectionRef.current) observer.observe(sectionRef.current)
+    if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
   }, [])
 
   return (
     <section
       id="demo"
-      ref={sectionRef}
+      ref={ref}
       style={{
         background: '#f6f3ea',
         padding: 'clamp(40px, 6vw, 80px) clamp(16px, 5vw, 80px)',
       }}
     >
-      {/* ══════════════════════════════════════════
-          MAIN CARD
-      ══════════════════════════════════════════ */}
       <div
         style={{
           background: '#fff',
@@ -42,62 +37,63 @@ export default function DemoSection() {
           transition: 'opacity 0.8s ease, transform 0.8s ease',
         }}
       >
-        <SectionTopic number="05" title="Demo" />
+        <SectionTopic number="08" title="Demo" />
 
-
-        {/* ── Heading + subtitle centred ── */}
-        <div
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(12px)',
-            transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
-            textAlign: 'center',
-            marginBottom: 'clamp(24px, 3.5vw, 40px)',
-          }}
-        >
-            <p
-              style={{
-                fontFamily: "'Fredoka', sans-serif",
-                fontSize: 'clamp(0.88rem, 1.3vw, 1.05rem)',
-                color: '#4a5e4a',
-                fontWeight: 500,
-                lineHeight: 1.65,
-                margin: '0 auto',
-                maxWidth: '100%',
-                textAlign: 'center',
-              }}
-            >
-              Watch a quick demo to see how children explore, learn, and grow in the WordGarden world.
-            </p>
-          </div>
-
-        {/* ── VIDEO PLAYER ── */}
-        <div
-          style={{
-            borderRadius: 20,
-            overflow: 'hidden',
-            boxShadow: '0 12px 48px rgba(0,0,0,0.18)',
-            background: '#000',
-            width: '100%',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.8s ease 0.35s, transform 0.8s ease 0.35s',
+        {/* ─── HEADER (REMOVED) ─── */}
+        {/* ─── VIDEO WRAPPER (16:9) ─── */}
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          maxWidth: '900px',
+          margin: '0 auto',
+          borderRadius: '24px',
+          overflow: 'hidden',
+          boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+          background: '#000',
+        }}>
+          <div style={{
+            paddingTop: '56.25%', // 16:9 Aspect Ratio
             position: 'relative',
-          }}
-        >
-          <video
-            controls
-            style={{
-              width: '100%',
-              display: 'block',
-              maxHeight: '65vh',
-              objectFit: 'contain',
-              background: '#000',
-            }}
-          >
-            <source src={demoVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          }}>
+            <iframe
+              src="https://www.youtube.com/embed/sBCyNuJp8Xg"
+              title="WordGarden Demo Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+              }}
+            ></iframe>
+          </div>
+        </div>
+
+        {/* ─── DECORATIONS ─── */}
+        <div style={{
+          position: 'absolute',
+          top: '10%',
+          right: '5%',
+          fontSize: 'clamp(24px, 4vw, 48px)',
+          animation: 'float 4s ease-in-out infinite',
+          pointerEvents: 'none',
+          opacity: 0.6
+        }}>
+          ☁️
+        </div>
+        <div style={{
+          position: 'absolute',
+          bottom: '15%',
+          left: '3%',
+          fontSize: 'clamp(20px, 3vw, 36px)',
+          animation: 'float 5s ease-in-out infinite 1s',
+          pointerEvents: 'none',
+          opacity: 0.6
+        }}>
+          🍃
         </div>
       </div>
     </section>

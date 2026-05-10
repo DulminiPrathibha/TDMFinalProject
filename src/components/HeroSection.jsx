@@ -63,6 +63,7 @@ export default function HeroSection() {
     { label: 'Research',         id: 'research' },
     { label: 'Commercialization',id: 'commercialization' },
     { label: 'Team',             id: 'team' },
+    { label: 'Demo',             id: 'demo' },
     { label: 'Resources',        id: 'resources' },
     { label: 'Contact Us',       id: 'contact-us' },
   ], [])
@@ -95,7 +96,7 @@ export default function HeroSection() {
       
       const observerOptions = {
         threshold: 0,
-        rootMargin: '-25% 0px -45% 0px' // Target the middle-top area
+        rootMargin: '-20% 0px -20% 0px' // Middle-screen detection for better reliability
       }
 
       const observer = new IntersectionObserver((entries) => {
@@ -423,7 +424,7 @@ export default function HeroSection() {
             }}
           >
             {/* Watch Demo scrolls to #demo section */}
-            <a href="https://drive.google.com/file/d/1jK3jQTw9f9XMjnim9InuTIWAkMBD-fG_/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <a href="#demo" style={{ textDecoration: 'none' }}>
               <WatchDemoButton />
             </a>
           </div>

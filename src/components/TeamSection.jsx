@@ -4,26 +4,30 @@ import SectionTopic from './SectionTopic'
 /* ─── ASSET IMPORTS ───────────────────────────────────────────── */
 // Banner (no teamsectionsmallbanner found; reusing the wooden-sign style via inline)
 // Member card avatars
-import kaviruCard      from '../assets/KaviruBandara.jpeg'
-import prathibhaCard   from '../assets/PrathibhaSamarasekara.png'
-import piyumalCard     from '../assets/PiyumalRanasinghe.jpeg'
-import pesalaCard      from '../assets/PesalaGunasekara.jpg'
-import dedulaCard      from '../assets/DidulaChamara.jpeg'
-import kasunCard       from '../assets/KasunKarunananayaka.jpeg'
-import nushkanCard     from '../assets/NushkanNisme.jpeg'
+import kaviruCard from '../assets/KaviruBandara.jpeg'
+import prathibhaCard from '../assets/PrathibhaSamarasekara.png'
+import piyumalCard from '../assets/PiyumalRanasinghe.jpeg'
+import pesalaCard from '../assets/PesalaGunasekara.jpg'
+import dedulaCard from '../assets/DidulaChamara.jpeg'
+import kasunCard from '../assets/KasunKarunananayaka.jpeg'
+import nushkanCard from '../assets/NushkanNisme.jpeg'
 
 // Modal full images (first-name files)
-import kaviruFull    from '../assets/kaviru.png'
+import kaviruFull from '../assets/kaviru.png'
 import prathibhaFull from '../assets/prathibha.png'
-import piyumalFull   from '../assets/piyumal.png'
-import pesalaFull    from '../assets/pesala.png'
+import piyumalFull from '../assets/piyumal.png'
+import pesalaFull from '../assets/pesala.png'
 
 // Resource icons
-import researchPaperIcon    from '../assets/researcpapericon.png'
-import presentationIcon     from '../assets/presentationiconicon.png'
+import researchPaperIcon from '../assets/researcpapericon.png'
+import presentationIcon from '../assets/presentationiconicon.png'
 import researchProposalIcon from '../assets/researchproposalicon.png'
 
-// Downloadable PDFs (Removed in favor of Google Drive links)
+// Downloadable PDFs
+import projectProposalPdf from '../assets/ProjectProposal.pdf'
+import researchPaperPdf from '../assets/ResearchPaper.pdf'
+import ethicalApprovalPdf from '../assets/ethicalapproval.pdf'
+import presentationPdf from '../assets/presentation.pdf'
 
 /* ─── TEAM DATA ───────────────────────────────────────────────── */
 const RESEARCHERS = [
@@ -104,8 +108,8 @@ const SUPERVISORS = [
 
 /* ─── MAIN COMPONENT ─────────────────────────────────────────── */
 export default function TeamSection() {
-  const [visible, setVisible]     = useState(false)
-  const [modalMember, setModal]   = useState(null)
+  const [visible, setVisible] = useState(false)
+  const [modalMember, setModal] = useState(null)
   const ref = useRef(null)
 
   useEffect(() => {
@@ -128,115 +132,115 @@ export default function TeamSection() {
     <>
       <section
         id="team"
-      ref={ref}
-      style={{
-        background: '#f6f3ea',
-        padding: 'clamp(40px, 6vw, 80px) clamp(16px, 5vw, 80px)',
-      }}
-    >
-      {/* ══════════════════════════════════════════
-          MAIN CARD
-      ══════════════════════════════════════════ */}
-      <div
+        ref={ref}
         style={{
-          background: '#fff',
-          borderRadius: 32,
-          boxShadow: '0 8px 60px rgba(0,0,0,0.08), 0 2px 16px rgba(0,0,0,0.04)',
-          border: '1.5px solid rgba(93,187,99,0.10)',
-          padding: 'clamp(28px, 4vw, 52px)',
-          position: 'relative',
-          overflow: 'hidden',
-          opacity: visible ? 1 : 0,
-          transform: visible ? 'translateY(0)' : 'translateY(32px)',
-          transition: 'opacity 0.8s ease, transform 0.8s ease',
+          background: '#f6f3ea',
+          padding: 'clamp(40px, 6vw, 80px) clamp(16px, 5vw, 80px)',
         }}
       >
-        <SectionTopic number="07" title="Team" />
-
         {/* ══════════════════════════════════════════
+          MAIN CARD
+      ══════════════════════════════════════════ */}
+        <div
+          style={{
+            background: '#fff',
+            borderRadius: 32,
+            boxShadow: '0 8px 60px rgba(0,0,0,0.08), 0 2px 16px rgba(0,0,0,0.04)',
+            border: '1.5px solid rgba(93,187,99,0.10)',
+            padding: 'clamp(28px, 4vw, 52px)',
+            position: 'relative',
+            overflow: 'hidden',
+            opacity: visible ? 1 : 0,
+            transform: visible ? 'translateY(0)' : 'translateY(32px)',
+            transition: 'opacity 0.8s ease, transform 0.8s ease',
+          }}
+        >
+          <SectionTopic number="07" title="Team" />
+
+          {/* ══════════════════════════════════════════
             HEADER ROW: heading CENTER
         ══════════════════════════════════════════ */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            marginBottom: 'clamp(28px, 4vw, 48px)',
-          }}
-        >
-
-          {/* subtitle */}
           <div
             style={{
-              opacity: visible ? 1 : 0,
-              transform: visible ? 'translateY(0)' : 'translateY(14px)',
-              transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
-              textAlign: 'center',
-              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              marginBottom: 'clamp(28px, 4vw, 48px)',
             }}
           >
-            <p
+
+            {/* subtitle */}
+            <div
               style={{
-                fontFamily: "'Fredoka', sans-serif",
-                fontWeight: 500,
-                fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
-                color: '#5a6e5a',
-                lineHeight: 1.65,
-                margin: '0 auto',
-                maxWidth: 520,
+                opacity: visible ? 1 : 0,
+                transform: visible ? 'translateY(0)' : 'translateY(14px)',
+                transition: 'opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s',
+                textAlign: 'center',
+                width: '100%',
               }}
             >
-              We're educators, designers, and dreamers working together<br />
-              to make learning more inclusive, engaging, and effective for every child.
-            </p>
+              <p
+                style={{
+                  fontFamily: "'Fredoka', sans-serif",
+                  fontWeight: 500,
+                  fontSize: 'clamp(0.85rem, 1.2vw, 1rem)',
+                  color: '#5a6e5a',
+                  lineHeight: 1.65,
+                  margin: '0 auto',
+                  maxWidth: 520,
+                }}
+              >
+                We're educators, designers, and dreamers working together<br />
+                to make learning more inclusive, engaging, and effective for every child.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* ══════════════════════════════════════════
+          {/* ══════════════════════════════════════════
             ROW 1 — 4 RESEARCHERS
         ══════════════════════════════════════════ */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: 'clamp(10px, 1.8vw, 18px)',
-            marginBottom: 'clamp(10px, 1.8vw, 18px)',
-          }}
-        >
-          {RESEARCHERS.map((m, i) => (
-            <MemberCard
-              key={m.num}
-              member={m}
-              visible={visible}
-              delay={0.2 + i * 0.08}
-              onMore={() => setModal(m)}
-            />
-          ))}
-        </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 'clamp(10px, 1.8vw, 18px)',
+              marginBottom: 'clamp(10px, 1.8vw, 18px)',
+            }}
+          >
+            {RESEARCHERS.map((m, i) => (
+              <MemberCard
+                key={m.num}
+                member={m}
+                visible={visible}
+                delay={0.2 + i * 0.08}
+                onMore={() => setModal(m)}
+              />
+            ))}
+          </div>
 
-        {/* ══════════════════════════════════════════
+          {/* ══════════════════════════════════════════
             ROW 2 — 3 SUPERVISORS (centred)
         ══════════════════════════════════════════ */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 'clamp(10px, 1.8vw, 18px)',
-            maxWidth: '75%',
-            margin: '0 auto',
-          }}
-        >
-          {SUPERVISORS.map((m, i) => (
-            <MemberCard
-              key={m.num}
-              member={m}
-              visible={visible}
-              delay={0.48 + i * 0.08}
-              onMore={() => setModal(m)}
-              isSupervisor
-            />
-          ))}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: 'clamp(10px, 1.8vw, 18px)',
+              maxWidth: '75%',
+              margin: '0 auto',
+            }}
+          >
+            {SUPERVISORS.map((m, i) => (
+              <MemberCard
+                key={m.num}
+                member={m}
+                visible={visible}
+                delay={0.48 + i * 0.08}
+                onMore={() => setModal(m)}
+                isSupervisor
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
       </section>
       <ResourcesBlock visible={visible} />
@@ -258,7 +262,7 @@ const RESOURCES = [
     btnBg: '#e8f5e9',
     btnBorder: '#2e7d32',
     btnColor: '#2e7d32',
-    file: 'https://drive.google.com/drive/folders/1Px4WdDl0dh0wM6VSBI3z48c-ewpsuphz?usp=drive_link',
+    file: researchPaperPdf,
     fileName: 'ResearchPaper.pdf',
   },
   {
@@ -270,7 +274,7 @@ const RESOURCES = [
     btnBg: '#ede7f6',
     btnBorder: '#6a1b9a',
     btnColor: '#6a1b9a',
-    file: 'https://drive.google.com/drive/folders/1UN8t8E-AVD0hRfXUfo5KILihg-JL-Euk?usp=sharing',
+    file: presentationPdf,
     fileName: 'Presentation.pdf',
   },
   {
@@ -282,7 +286,7 @@ const RESOURCES = [
     btnBg: '#e3f2fd',
     btnBorder: '#1565c0',
     btnColor: '#1565c0',
-    file: 'https://drive.google.com/drive/folders/1Z3Vr02Z88jj90uQCEUzEde0AVrZLqgh_?usp=drive_link',
+    file: projectProposalPdf,
     fileName: 'ProjectProposal.pdf',
   },
   {
@@ -294,7 +298,7 @@ const RESOURCES = [
     btnBg: '#fff3e0',
     btnBorder: '#e65100',
     btnColor: '#e65100',
-    file: 'https://drive.google.com/drive/folders/1D7vYmpwsVI0wPTpLA9wynvD85jZSrCU1?usp=sharing',
+    file: ethicalApprovalPdf,
     fileName: 'EthicalApproval.pdf',
   },
 ]
@@ -463,10 +467,10 @@ function ResourceCard({ resource, visible, delay }) {
         }}
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M7 1v8M3.5 6l3.5 4 3.5-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M1 11h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+          <path d="M7 1v8M3.5 6l3.5 4 3.5-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M1 11h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
         </svg>
-        {file?.startsWith?.('http') ? 'View' : 'Download'}
+        {file?.startsWith?.('http') ? 'Download' : 'Download'}
       </a>
     </div>
   )
@@ -559,8 +563,8 @@ function MemberCard({ member, visible, delay, onMore, isSupervisor }) {
       }}>
         {/* Envelope icon */}
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ marginTop: 2, flexShrink: 0 }}>
-          <rect x="1" y="2.5" width="12" height="9" rx="1.5" stroke="#9e9e9e" strokeWidth="1.2" fill="none"/>
-          <polyline points="1,3 7,8 13,3" stroke="#9e9e9e" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          <rect x="1" y="2.5" width="12" height="9" rx="1.5" stroke="#9e9e9e" strokeWidth="1.2" fill="none" />
+          <polyline points="1,3 7,8 13,3" stroke="#9e9e9e" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <span style={{
           fontFamily: "'Fredoka', sans-serif",
